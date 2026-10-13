@@ -67,7 +67,7 @@ notebookは、新しいランタイムで上から順に実行すれば動くよ
 
 ## 2. 単元の一覧
 
-状態:**✓** = このリポジトリに用意済み、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
+状態:**✓** = このリポジトリに用意済み(2026-10-13 時点:M1〜M4、R5、S1)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
 
 「既存」の教材のうち、Markdown の本文は研究室の [research-handbook](https://github.com/oit-cpai/research-handbook)(研究室のメンバー向け)、notebook は [lab-core](https://github.com/oit-cpai/lab-core)(公開)にある。
 
@@ -78,7 +78,7 @@ notebookは、新しいランタイムで上から順に実行すれば動くよ
 | M1 | 数式・ベクトル・配列 | 添字・総和・最大値、ベクトル・内積・ノルム、行列積とサイズ、配列の形と軸 | [math/01-vectors-arrays.md](math/01-vectors-arrays.md) | ✓ |
 | M2 | 確率・期待値・標本平均 | 確率変数、期待値と標本平均の違い、分散、条件付き確率、数え上げによる確率の推定、マルコフ連鎖の入口 | [math/02-probability-expectation.md](math/02-probability-expectation.md) | ✓ |
 | M3 | 微分・一次近似 | 微分と数値微分、偏微分・勾配、一次近似、ヤコビ行列、勾配法 | [math/03-derivative-linear-approx.md](math/03-derivative-linear-approx.md) | ✓ |
-| M4 | 連立一次方程式と最小二乗法 | 解の存在と一意性、ランクの直観、最小二乗法、`solve` と `lstsq` | [`machine-learning/linear-regression.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/linear-regression.md) §2 を一部 | 予定 |
+| M4 | 連立一次方程式と最小二乗法 | 解の存在と一意性、ランクの直観、最小二乗法と正規方程式、`solve` と `lstsq`、マルコフ連鎖の価値 | [math/04-linear-systems-least-squares.md](math/04-linear-systems-least-squares.md) | ✓ |
 | M5 | 積分と確率密度 | 定積分と面積、確率密度と確率、連続変数の期待値、ヒストグラム | — | 予定 |
 | M6 | マルコフ連鎖 | 遷移行列、状態分布の変化、定常分布 | M2 の §6 で入口のみ | 予定 |
 | M7 | 数値計算と実験の作法 | 浮動小数点、反復計算と停止条件、乱数と seed、再現性、複数 seed での比較 | [`reinforcement-learning/hyperparameter.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/hyperparameter.md) を一部 | 予定 |
@@ -93,7 +93,7 @@ notebookは、新しいランタイムで上から順に実行すれば動くよ
 | R2 | 環境を作る(`step()`) | M1 | [`reinforcement-learning/gridworld-step.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/gridworld-step.md)、notebook [`gridworld_step_exercise`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/gridworld_step_exercise.ipynb) | 既存 |
 | R3 | MDPとベルマン方程式 | M2 | [`reinforcement-learning/mdp.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/mdp.md)(§1〜6 を先に。§7 は R4 のあとでよい) | 既存 |
 | R4 | 動的計画法(方策評価・価値反復) | R3、M1 | [`reinforcement-learning/dynamic-programming.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/dynamic-programming.md) §1〜5、notebook [`dp_gridworld`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/dp_gridworld.ipynb) | 既存 |
-| R5 | 経験からモデルを推定する | M2 §5、R4 | 新しく作る(数え上げで $\hat P(s'\mid s,a)$ を推定し、価値反復を適用する) | 予定 |
+| R5 | 経験からモデルを推定する | M2 §5、M4 §4、R4 | [rl/05-model-estimation.md](rl/05-model-estimation.md)(数え上げで $\hat P$・$\hat R$ を推定し、価値反復で計画して、本当のモデルで評価する) | ✓ |
 | R6 | モンテカルロ法 | R4 | [`reinforcement-learning/monte-carlo.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/monte-carlo.md) §1〜4 | 既存 |
 | R7 | TD学習・Sarsa・Q学習 | R6 | [`reinforcement-learning/td-learning.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/td-learning.md)、`cliff-walking.md`、notebook [`cliff_walking_lecture`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/cliff_walking_lecture.ipynb) | 既存 |
 | R8 | Dyna-Q(発展) | R5、R7 | [`reinforcement-learning/model-based.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/model-based.md) §1〜2 | 既存 |
@@ -104,7 +104,7 @@ R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確か
 
 | # | 単元 | 前提 | 教材 | 状態 |
 |---|---|---|---|---|
-| S1 | 1変数の線形回帰 | M1 | 新しく作る(入力・正解・予測・残差・損失) | 予定 |
+| S1 | 1変数の線形回帰 | M1、M2、M3 | [supervised/01-linear-regression-1d.md](supervised/01-linear-regression-1d.md)(入力・正解・予測・残差・損失、推定のばらつき、学習用と評価用の分割) | ✓ |
 | S2 | 複数入力の線形回帰と最小二乗法 | M1、M4 | [`machine-learning/linear-regression.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/linear-regression.md) §1〜2 | 既存 |
 | S3 | 勾配法 | M3 | M3 の §5、新しく作る(同じ損失を最小二乗と勾配法で解く) | 予定 |
 | S4 | 多項式回帰・リッジ回帰と過学習 | S2 | [`machine-learning/ml-basics.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/ml-basics.md)、`linear-regression.md` §4、notebook [`polynomial_regression`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/polynomial_regression.ipynb) | 既存 |
@@ -222,6 +222,8 @@ cpai-foundations/
 ├── diagnostic.md           # 診断課題
 ├── diagnostic-answers.md   # 診断課題の解答と、次に進む単元
 ├── math/                   # 共通基礎(数学)の単元:本文(.md)と演習の notebook(.ipynb)
+├── rl/                     # 強化学習の単元(既存の教材にない部分)
+├── supervised/             # 教師あり学習の単元(既存の教材にない部分)
 └── solutions/              # notebook の解答つきの版
 ```
 

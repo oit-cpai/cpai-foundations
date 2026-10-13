@@ -1,0 +1,56 @@
+name: test-notebooks
+
+# 解答つきの notebook(solutions/)を実行し、教材が壊れていないかを確かめる。
+# 演習の版は TODO で止まるので、JSON として正しいかだけを確かめる。
+
+on:
+  push:
+    paths:
+      - "**.ipynb"
+      - ".github/workflows/test-notebooks.yml"
+  pull_request:
+    paths:
+      - "**.ipynb"
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install numpy matplotlib jupyter nbconvert
+
+      - name: Execute solution notebooks
+        run: |
+          set -e
+          for nb in solutions/*.ipynb; do
+            echo "=== $nb ==="
+            jupyter nbconvert --to notebook --execute \
+              --ExecutePreprocessor.timeout=600 \
+              --output /tmp/out.ipynb "$nb"
+          done
+
+      - name: Validate all notebook JSON
+        run: |
+          python - <<'PY'
+          import json, glob, sys
+          bad = []
+          for p in glob.glob("**/*.ipynb", recursive=True):
+              try:
+                  nb = json.load(open(p, encoding="utf-8"))
+                  assert nb.get("nbformat") == 4 and "cells" in nb
+              except Exception as e:
+                  bad.append((p, str(e)))
+          if bad:
+              print(bad); sys.exit(1)
+          print("all notebooks valid")
+          PY
