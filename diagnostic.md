@@ -19,8 +19,14 @@
 **A3(行列とベクトルの積)** 次を計算せよ。
 
 $$
-\begin{pmatrix} 1 & 2 \\ 0 & -1 \end{pmatrix}
-\begin{pmatrix} 3 \\ 1 \end{pmatrix}
+\begin{pmatrix}
+  1 & 2 \\
+  0 & -1
+\end{pmatrix}
+\begin{pmatrix} 
+  3 \\
+  1
+\end{pmatrix}
 $$
 
 **A4(重み付き平均・期待値)** さいころを振って、1・2・3 の目なら 0 点、4・5 の目なら 3 点、6 の目なら 6 点もらえる。もらえる点数の期待値を求めよ。
