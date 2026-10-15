@@ -90,13 +90,11 @@ $$
 \begin{pmatrix}
   3 \\
   1
-\end{pmatrix}
-=
+\end{pmatrix} =
 \begin{pmatrix}
   1\cdot 3 + 2 \cdot 1 \\
   0 \cdot 3 + (-1)\cdot 1
-\end{pmatrix}
-=
+\end{pmatrix} =
 \begin{pmatrix}
   5 \\
   -1
@@ -109,22 +107,6 @@ $$
 ## 4. 回転:三角関数と行列
 
 平面上の点 $(x, y)$ を、原点のまわりに反時計回りに角度 $\theta$ だけ回転させると、
-
-$$
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-=
-\begin{pmatrix}
-ax + by \\
-cx + dy
-\end{pmatrix}
-$$
 
 $$
 \begin{pmatrix}
