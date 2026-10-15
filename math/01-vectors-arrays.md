@@ -88,6 +88,11 @@ $$
   1 & 2 \\
   0 & -1
 \end{pmatrix}
+\begin{pmatrix}
+  3 \\
+  1
+\end{pmatrix}
+=
 $$
 
 $$
