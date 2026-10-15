@@ -31,16 +31,21 @@ for i in range(n):      # Python の添字は 0 から始まる
 
 よく使う形:
 
-- 平均:$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$
-- 重み付きの和:$\sum_{i=1}^{n} w_i x_i$(次の節の内積)
-- 最大値と、最大になる添字:$\max_i x_i$ と $\arg\max_i x_i$。たとえば $x = (3, 7, 5)$ なら、 $\max_i x_i = 7$、 $\arg\max_i x_i = 2$(1から数えた場合)。強化学習で「価値が最大の行動を選ぶ」ときに使う
+- 平均: $\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$
+- 重み付きの和: $\sum_{i=1}^{n} w_i x_i$(次の節の内積)
+- 最大値と、最大になる添字: $\max_i x_i$ と $\arg\max_i x_i$。たとえば $x = (3, 7, 5)$ なら、 $\max_i x_i = 7$、 $\arg\max_i x_i = 2$(1から数えた場合)。強化学習で「価値が最大の行動を選ぶ」ときに使う
 
 ## 2. ベクトル・内積・ノルム
 
 数を縦に並べたものを**ベクトル**という。この教材では、ベクトルは縦(列ベクトル)で考える。
 
 $$
-a = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}, \qquad
+a =
+\begin{pmatrix}
+  a_1 \\
+  a_2 \\
+  a_3
+\end{pmatrix}, \qquad
 a^\top = (a_1, a_2, a_3)
 $$
 
@@ -54,12 +59,12 @@ $$
 
 **ノルム**(長さ)は $\lVert a \rVert = \sqrt{a^\top a}$ である。
 
-例:$a = (1, 2, -1)^\top$、 $b = (3, 0, 2)^\top$ なら、 $a^\top b = 3 + 0 - 2 = 1$、 $\lVert a \rVert = \sqrt{6}$。
+例: $a = (1, 2, -1)^\top$、 $b = (3, 0, 2)^\top$ なら、 $a^\top b = 3 + 0 - 2 = 1$、 $\lVert a \rVert = \sqrt{6}$。
 
 内積は、3分野で次のように現れる。
 
 - 教師あり学習:入力の特徴量 $x$ と重み $w$ の内積 $w^\top x$ が、線形モデルの予測になる
-- 強化学習:次の状態の確率 $p(s')$ と価値 $V(s')$ の内積 $\sum_{s'} p(s') V(s')$ が、次の状態の価値の期待値になる(M2 で詳しく扱う)
+- 強化学習:次の状態の確率 $p(s^\prime)$ と価値 $V(s^\prime)$ の内積 $\sum_{s^\prime} p(s^\prime) V(s^\prime)$ が、次の状態の価値の期待値になる(M2 で詳しく扱う)
 - 内積が 0 のとき、2つのベクトルは直交する
 
 ## 3. 行列と行列積
@@ -72,19 +77,31 @@ $$
 (AB)_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}
 $$
 
-**大きさの規則**:$(m \times n)(n \times p) = (m \times p)$。内側の $n$ がそろっていないと、積は計算できない。 $AB$ が計算できても、 $BA$ が計算できるとは限らない。計算できても、一般に $AB \neq BA$ である。
+**大きさの規則**: $(m \times n)(n \times p) = (m \times p)$。内側の $n$ がそろっていないと、積は計算できない。 $AB$ が計算できても、 $BA$ が計算できるとは限らない。計算できても、一般に $AB \neq BA$ である。
 
 行列とベクトルの積 $Ax$ は、 $x$ を $n \times 1$ の行列とみた特別な場合で、結果は長さ $m$ のベクトルになる。
 
 例:
 
 $$
-\begin{pmatrix} 1 & 2 \\ 0 & -1 \end{pmatrix}
-\begin{pmatrix} 3 \\ 1 \end{pmatrix}
+\begin{pmatrix}
+  1 & 2 \\
+  0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+  3 \\
+  1
+\end{pmatrix}
 =
-\begin{pmatrix} 1\cdot 3 + 2 \cdot 1 \\ 0 \cdot 3 + (-1)\cdot 1 \end{pmatrix}
+\begin{pmatrix}
+  1\cdot 3 + 2 \cdot 1 \\
+  0 \cdot 3 + (-1)\cdot 1
+\end{pmatrix}
 =
-\begin{pmatrix} 5 \\ -1 \end{pmatrix}
+\begin{pmatrix}
+  5 \\
+  -1
+\end{pmatrix}
 $$
 
 > [!IMPORTANT]
@@ -95,10 +112,19 @@ $$
 平面上の点 $(x, y)$ を、原点のまわりに反時計回りに角度 $\theta$ だけ回転させると、
 
 $$
-\begin{pmatrix} x' \\ y' \end{pmatrix}
+\begin{pmatrix}
+  x^\prime \\
+  y^\prime
+\end{pmatrix}
 =
-\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}
-\begin{pmatrix} x \\ y \end{pmatrix}
+\begin{pmatrix}
+  \cos\theta & -\sin\theta \\
+  \sin\theta & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+  x \\
+  y
+\end{pmatrix}
 $$
 
 の点に移る。右辺の $2 \times 2$ の行列を**回転行列**という。
