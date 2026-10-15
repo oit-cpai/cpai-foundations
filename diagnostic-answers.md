@@ -9,14 +9,14 @@
 
 | 問 | 解答 | できなかったら |
 |---|---|---|
-| A1 | $AB$ は $3 \times 4$。$BA$ は計算できない($B$ の列の数 4 と $A$ の行の数 3 が合わない) | M1 §3 |
-| A2 | $a^\top b = 1\cdot3 + 2\cdot0 + (-1)\cdot2 = 1$、$\lVert a \rVert = \sqrt{1+4+1} = \sqrt{6}$ | M1 §2 |
+| A1 | $AB$ は $3 \times 4$。 $BA$ は計算できない($B$ の列の数 4 と $A$ の行の数 3 が合わない) | M1 §3 |
+| A2 | $a^\top b = 1\cdot3 + 2\cdot0 + (-1)\cdot2 = 1$、 $\lVert a \rVert = \sqrt{1+4+1} = \sqrt{6}$ | M1 §2 |
 | A3 | $(1\cdot3 + 2\cdot1,\; 0\cdot3 + (-1)\cdot1)^\top = (5, -1)^\top$ | M1 §3 |
 | A4 | $0 \cdot \tfrac{3}{6} + 3 \cdot \tfrac{2}{6} + 6 \cdot \tfrac{1}{6} = 2$ | M2 §1〜2 |
 | A5 | 印のついた玉は 2 + 3 = 5 個、そのうち赤は 2 個なので $2/5$ | M2 §4 |
-| A6 | $f'(x) = 6x - 4$。$f'(x) = 0$ より $x = 2/3$ | M3 §1 |
-| A7 | $\partial g/\partial x = 2xy$、$\partial g/\partial y = x^2 + 3$ | M3 §3 |
-| A8 | $(0, 1)$。$90° = \pi/2$ ラジアン | M1 §4、K3 |
+| A6 | $f'(x) = 6x - 4$。 $f'(x) = 0$ より $x = 2/3$ | M3 §1 |
+| A7 | $\partial g/\partial x = 2xy$、 $\partial g/\partial y = x^2 + 3$ | M3 §3 |
+| A8 | $(0, 1)$。 $90° = \pi/2$ ラジアン | M1 §4、K3 |
 | A9 | $1 + 4 + 9 + 16 = 30$ | M1 §1 |
 
 ## B. 数式とコードの対応
