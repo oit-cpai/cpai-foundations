@@ -82,21 +82,6 @@ $$
 行列とベクトルの積 $Ax$ は $x$ を $n \times 1$ の行列とみた特別な場合で、結果は長さ $m$ のベクトルになる。
 
 例:
-
-$$
-\begin{pmatrix}
-  1 & 2 \\
-  0 & -1
-\end{pmatrix}
-
-\begin{pmatrix}
-  3 \\
-  1
-\end{pmatrix}
-
-=
-$$
-
 $$
 \begin{pmatrix}
   1 & 2 \\
@@ -124,6 +109,22 @@ $$
 ## 4. 回転:三角関数と行列
 
 平面上の点 $(x, y)$ を、原点のまわりに反時計回りに角度 $\theta$ だけ回転させると、
+
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+ax + by \\
+cx + dy
+\end{pmatrix}
+$$
 
 $$
 \begin{pmatrix}
