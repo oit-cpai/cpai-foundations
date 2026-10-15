@@ -25,7 +25,8 @@
 | 教師あり学習 | 回帰と分類について、入力・正解・損失を説明し、学習用と評価用のデータを分けてモデルを比べられる | 線形回帰で、予測・残差・損失の関係を説明できる |
 | ロボットの運動学 | 平面アームの順・逆運動学を理解し、座標変換とヤコビ行列を使って、空間アームの順運動学・数値逆運動学へ広げられる | 2リンク平面アームの順運動学と解析的な逆運動学を説明できる |
 
-3年生の最初の履修では、**全員が3分野の入口(最初の到達点)を経験し、そのあと1分野を選んで標準の到達目標まで仕上げる**。
+> [!IMPORTANT]
+> 3年生の最初の履修では、**全員が3分野の入口(最初の到達点)を経験し、そのあと1分野を選んで標準の到達目標まで仕上げる**。
 
 ## 1. 学び方
 
@@ -45,8 +46,9 @@
 5. **条件を変えて比べる**
 6. **結果を自分の言葉で説明する**
 
-notebookには自分の実装が正しいかを確かめる `check_...()` 関数が入っている。`OK` と出るまで直してから先に進む。
-notebookは新しいランタイムで上から順に実行すれば動くように作ってある(必要なライブラリは NumPy と Matplotlib だけ)。各notebookの先頭の「Open In Colab」ボタンから開く。
+> [!TIP]
+> notebookには自分の実装が正しいかを確かめる `check_...()` 関数が入っている。`OK` と出るまで直してから先に進む。
+> notebookは新しいランタイムで上から順に実行すれば動くように作ってある(必要なライブラリは NumPy と Matplotlib だけ)。各notebookの先頭の「Open In Colab」ボタンから開く。
 
 ### 1.3 生成AIの使い方
 
@@ -65,7 +67,8 @@ notebookは新しいランタイムで上から順に実行すれば動くよう
 
 状態:**✓** = このリポジトリに用意済み(2026-10-13 時点:M1〜M4、R5、S1)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
 
-「既存」の教材のうち、Markdown の本文は研究室の [research-handbook](https://github.com/oit-cpai/research-handbook)(研究室のメンバー向け)、notebook は [lab-core](https://github.com/oit-cpai/lab-core)(公開)にある。
+> [!NOTE]
+> 「既存」の教材のうち、Markdown の本文は研究室の [research-handbook](https://github.com/oit-cpai/research-handbook)(研究室のメンバー向け)、notebook は [lab-core](https://github.com/oit-cpai/lab-core)(公開)にある。
 
 ### 2.1 共通基礎(数学と計算)
 
@@ -79,7 +82,8 @@ notebookは新しいランタイムで上から順に実行すれば動くよう
 | M6 | マルコフ連鎖 | 遷移行列、状態分布の変化、定常分布 | M2 の §6 で入口のみ | 予定 |
 | M7 | 数値計算と実験の作法 | 浮動小数点、反復計算と停止条件、乱数と seed、再現性、複数 seed での比較 | [`reinforcement-learning/hyperparameter.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/hyperparameter.md) を一部 | 予定 |
 
-固有値・特異値分解(SVD)は、最初の共通基礎には入れない。数値逆運動学(K6)で「動きにくい方向がある」ことを見てから導入する。
+> [!NOTE]
+> 固有値・特異値分解(SVD)は、最初の共通基礎には入れない。数値逆運動学(K6)で「動きにくい方向がある」ことを見てから導入する。
 
 ### 2.2 強化学習(離散)
 
@@ -94,7 +98,8 @@ notebookは新しいランタイムで上から順に実行すれば動くよう
 | R7 | TD学習・Sarsa・Q学習 | R6 | [`reinforcement-learning/td-learning.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/td-learning.md)、`cliff-walking.md`、notebook [`cliff_walking_lecture`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/cliff_walking_lecture.ipynb) | 既存 |
 | R8 | Dyna-Q(発展) | R5、R7 | [`reinforcement-learning/model-based.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/model-based.md) §1〜2 | 既存 |
 
-R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確かめる。比べるときは、**環境から得たサンプル数をそろえる**。
+> [!TIP]
+> R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確かめる。比べるときは、**環境から得たサンプル数をそろえる**。
 
 ### 2.3 教師あり学習(深層学習なし)
 
@@ -107,7 +112,8 @@ R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確か
 | S5 | ロジスティック回帰と分類 | S3、M2 | [`machine-learning/classification.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/classification.md)(ロジスティック回帰の節)、notebook [`logistic_regression`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/logistic_regression.ipynb) | 既存 |
 | S6 | 評価:データの分け方と指標 | S4 | [`machine-learning/model-evaluation.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/model-evaluation.md) §1・§5・§6 | 既存 |
 
-モデルの数を増やすことより、**評価を正しく行うこと**(学習用・検証用・テスト用のデータの役割、前処理を学習用のデータだけで決めること)を重視する。
+> [!IMPORTANT]
+> モデルの数を増やすことより、**評価を正しく行うこと**(学習用・検証用・テスト用のデータの役割、前処理を学習用のデータだけで決めること)を重視する。
 
 ### 2.4 ロボットの運動学
 
@@ -120,7 +126,8 @@ R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確か
 | K5 | 空間アーム(4〜6自由度)の順運動学 | K3 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §4(DH記法)、notebook は新しく作る | 予定 |
 | K6 | 空間アームの数値逆運動学(発展) | K4、K5 | 新しく作る(位置・姿勢の誤差、疑似逆行列、減衰、特異姿勢) | 予定 |
 
-最初に次の3つを区別しておく:**関節の自由度**(関節変数の数)、**手先の自由度**(位置3+姿勢3 = 最大6)、**座標変換の行列の大きさ**(3次元の同次変換は 4×4。「4」は自由度の数ではない)。
+> [!WARNING]
+> 最初に次の3つを区別しておく:**関節の自由度**(関節変数の数)、**手先の自由度**(位置3+姿勢3 = 最大6)、**座標変換の行列の大きさ**(3次元の同次変換は 4×4。「4」は自由度の数ではない)。
 
 ## 3. 学ぶ順番(3年生の早期配属)
 
@@ -209,6 +216,18 @@ R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確か
 | 補足 | 発展課題、参考資料 |
 
 notebook は、新しいランタイムで上から実行すれば動くこと(必要なデータは notebook の中で作る)。CPU で数分以内に終わること。演習の版は `math/` などの単元のフォルダに、解答つきの版は `solutions/` に置く。
+
+### アラートの使い分け
+
+本文の中で特に目立たせたいところは、GitHub のアラート(`> [!NOTE]` など)で囲む。1つの単元で3〜5個までにする(多すぎると目立たなくなる)。
+
+| 種類 | 使うところ |
+|---|---|
+| `[!NOTE]` | 補足。読み飛ばしてもよいが、知っておくと理解が深まること |
+| `[!TIP]` | うまく進めるためのコツ、自分で確かめる方法 |
+| `[!IMPORTANT]` | その単元で必ず押さえること、評価の作法 |
+| `[!WARNING]` | 間違えやすいところ(ラジアンと度、添字の数え方など) |
+| `[!CAUTION]` | やると結果を誤って解釈してしまう行動 |
 
 ## リポジトリの構成
 
