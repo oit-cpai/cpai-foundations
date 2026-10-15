@@ -14,7 +14,7 @@
 
 次の連立方程式を考える。
 
-$$
+```math
 \begin{cases}
 2x_1 + x_2 = 5 \\
 x_1 - x_2 = 1
@@ -24,7 +24,7 @@ x_1 - x_2 = 1
 \underbrace{\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}}_{x}
 =
 \underbrace{\begin{pmatrix} 5 \\ 1 \end{pmatrix}}_{b}
-$$
+```
 
 左の連立方程式と、右の行列の式は同じものである(M1 の行列とベクトルの積)。解は $x = (2, 1)^\top$。
 
