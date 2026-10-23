@@ -80,7 +80,7 @@
 | M4 | 連立一次方程式と最小二乗法 | 解の存在と一意性、ランクの直観、最小二乗法と正規方程式、`solve` と `lstsq`、マルコフ連鎖の価値 | [math/04-linear-systems-least-squares.md](math/04-linear-systems-least-squares.md) | ✓ |
 | M5 | 積分と確率密度 | 定積分と面積、確率密度と確率、連続変数の期待値、ヒストグラム | — | 予定 |
 | M6 | マルコフ連鎖 | 遷移行列、状態分布の変化、定常分布 | M2 の §6 で入口のみ | 予定 |
-| M8 | 線形代数:直線運動の推定から固有値・SVDへ(発展) | 一定速度の台車の観測から初期位置と速度を推定する。最小二乗法と残差の直交、ランクと解の一意性、二次形式・正定値と固有値、推定の感度と特異値・擬似逆行列 | [math/08-linear-algebra-line-fit.md](math/08-linear-algebra-line-fit.md)(notebook は予定) | ✓ |
+| M8 | 線形代数:直線運動の推定から固有値・SVDへ(発展) | 一定速度の台車の観測から初期位置と速度を推定する。最小二乗法と残差の直交、ランクと解の一意性、二次形式・正定値と固有値、推定の感度と特異値・擬似逆行列 | [math/08-linear-algebra-line-fit.md](math/08-linear-algebra-line-fit.md)、notebook(課題1〜4と発展1〜5) | ✓ |
 | M7 | 数値計算と実験の作法 | 浮動小数点、反復計算と停止条件、乱数と seed、再現性、複数 seed での比較 | [`reinforcement-learning/hyperparameter.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/hyperparameter.md) を一部 | 予定 |
 
 > [!NOTE]

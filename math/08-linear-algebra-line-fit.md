@@ -6,10 +6,29 @@
 | 前提 | M1(行列とベクトルの積、内積、ノルム)、M4(連立一次方程式、最小二乗法、正規方程式) |
 | 時間の目安 | 本文 1.5時間、課題 2〜3時間(課題1〜4。一度に全部やらなくてよい) |
 | 使う場面 | 機械学習(線形回帰、主成分分析)、ロボティクス(状態・パラメータの推定、ヤコビ行列、特異姿勢)、最適化(二次の目的関数、ヘッセ行列) |
-| notebook | 予定。今は自分で Colab に NumPy と Matplotlib のコードを書いて確かめる |
+| notebook | [`08_linear_algebra_line_fit.ipynb`](08_linear_algebra_line_fit.ipynb)(課題1〜4と発展1〜5)。下の「notebook を開く」から Colab で開く |
 
 > [!NOTE]
 > この単元は、M4 のあと、研究で推定や最適化を扱う人が進む。最初の共通基礎(3年生の全員)には入れない。線形代数の詳しい内容は教科書で学ぶ。この単元は、その入口として「式が何を表し、どんな条件で使え、結果をどう読むか」を一つの題材で通して見る。
+
+## notebook を開く
+
+| 版 | Colab で開く |
+|---|---|
+| 演習の版(`TODO` を自分で埋める) | <a href="https://colab.research.google.com/github/oit-cpai/cpai-foundations/blob/main/math/08_linear_algebra_line_fit.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| 解答つきの版(答え合わせに使う) | <a href="https://colab.research.google.com/github/oit-cpai/cpai-foundations/blob/main/solutions/08_linear_algebra_line_fit_solution.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+notebook の構成:1〜4 が本文の課題1〜4、5〜9 が発展(1〜4 が終わってから、興味のあるものを選んでよい)。
+
+| 節 | 内容 |
+|---|---|
+| 発展1 | 4回の観測を、いつ行うのがよいか(実験計画、 $\det(A^\top A)$ ) |
+| 発展2 | 時刻の原点と単位を変えると、何が変わり、何が変わらないか(条件数と推定の精度の違い) |
+| 発展3 | 一定速度でなかったら(等加速度運動のモデル、残差の形でモデルの誤りに気づく) |
+| 発展4 | リッジ回帰で、小さな特異値の影響を抑える(偏りとばらつきのトレードオフ) |
+| 発展5 | たくさんの台車の軌跡と、低ランク近似(主成分分析への入口) |
+
+Colab で開いたら、「ドライブにコピーを保存」してから編集する。
 
 この単元では、次の3つを順に見る。
 
