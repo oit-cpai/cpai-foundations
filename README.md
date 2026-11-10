@@ -48,7 +48,9 @@
 
 > [!TIP]
 > notebookには自分の実装が正しいかを確かめる `check_...()` 関数が入っている。`OK` と出るまで直してから先に進む。
-> notebookは新しいランタイムで上から順に実行すれば動くように作ってある(必要なライブラリは NumPy と Matplotlib だけ)。各notebookの先頭の「Open In Colab」ボタンから開く。
+> notebookは新しいランタイムで上から順に実行すれば動くように作ってある(使うライブラリは NumPy・Matplotlib・SciPy だけ。どれも Colab に最初から入っているので、インストールはいらない)。各notebookの先頭の「Open In Colab」ボタンから開く。
+
+強化学習・教師あり学習・ロボットの運動学の単元では、まず中心になる計算を自分で実装する。単元の最後の節で、同じものが研究室のライブラリ `cpai_lab`([lab-core](https://github.com/oit-cpai/lab-core))ではどう使えるかを確かめる。卒研では、このライブラリを使う。
 
 ### 1.3 生成AIの使い方
 
