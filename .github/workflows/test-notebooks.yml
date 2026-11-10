@@ -27,7 +27,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install numpy matplotlib jupyter nbconvert
+        run: pip install numpy matplotlib scipy jupyter nbconvert
 
       - name: Execute solution notebooks
         run: |

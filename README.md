@@ -67,7 +67,7 @@
 
 ## 2. 単元の一覧
 
-状態:**✓** = このリポジトリに用意済み(2026-10-13 時点:M1〜M4、R5、S1)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
+状態:**✓** = このリポジトリに用意済み(2026-11-11 時点:M1〜M4、M8、R5、S1、K1、K2)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
 
 > [!NOTE]
 > 「既存」の教材のうち、Markdown の本文は研究室の [research-handbook](https://github.com/oit-cpai/research-handbook)(研究室のメンバー向け)、notebook は [lab-core](https://github.com/oit-cpai/lab-core)(公開)にある。
@@ -122,8 +122,8 @@
 
 | # | 単元 | 前提 | 教材 | 状態 |
 |---|---|---|---|---|
-| K1 | 2リンク平面アームの順運動学 | M1(三角関数) | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §5、notebook [`arm_kinematics`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/arm_kinematics.ipynb) 課題1 | 既存 |
-| K2 | 解析的な逆運動学 | K1 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §6、notebook [`arm_kinematics`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/arm_kinematics.ipynb) 課題2 | 既存 |
+| K1 | 2リンク平面アームの順運動学 | M1(三角関数、内積、回転行列) | [kinematics/01-forward-kinematics.md](kinematics/01-forward-kinematics.md)(肘と手先の位置、相対角、到達可能領域、関節の可動範囲) | ✓ |
+| K2 | 解析的な逆運動学 | K1 | [kinematics/02-inverse-kinematics.md](kinematics/02-inverse-kinematics.md)(余弦定理と `atan2`、2つの解・1つの解・解なし、境界での丸めの誤差、角度の跳び) | ✓ |
 | K3 | 座標変換(回転行列・同次変換) | M1 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §2〜3 | 既存 |
 | K4 | 平面アームの数値逆運動学 | M3、K1 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §7〜8、notebook [`arm_kinematics`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/arm_kinematics.ipynb) 課題3・応用 | 既存 |
 | K5 | 空間アーム(4〜6自由度)の順運動学 | K3 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §4(DH記法)、notebook は新しく作る | 予定 |
@@ -187,7 +187,9 @@
 | データの分割、データリーク | S6 |
 | ベルマン方程式、価値反復 | R3、R4 |
 | Q学習、ε-greedy | R7、R1 |
-| 回転行列、同次変換 | K3、K5 |
+| 順運動学、到達可能領域、関節の可動範囲 | K1 |
+| 逆運動学、`atan2`、解が複数あること | K2、K4 |
+| 回転行列、同次変換 | M1、K1、K3、K5 |
 | 特異姿勢、疑似逆行列 | K4、K6、M8 |
 
 ## 6. 大学院進学を考えている人へ(発展課題)
