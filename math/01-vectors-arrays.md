@@ -54,12 +54,12 @@ $\boldsymbol{a}^\top$ は縦を横にした**転置**である。ベクトルは
 2つのベクトルの**内積**は対応する成分を掛けて足したものである。
 
 $$
-\bm{a}^\top \bm{b} = \sum_{i=1}^{n} a_i b_i
+\mathbf{\mathit{a}}^\top \bm{b} = \sum_{i=1}^{n} a_i b_i
 $$
 
-**ノルム**(長さ)は $\lVert \bm{a} \rVert = \sqrt{\bm{a}^\top \bm{a}}$ である。
+**ノルム**(長さ)は $\lVert \pmb{a} \rVert = \sqrt{\pmb{a}^\top \pmbbm{a}}$ である。
 
-例: $\bm{a} = (1, 2, -1)^\top$、 $\bm{b} = (3, 0, 2)^\top$ なら、 $\bm{a}^\top \bm{b} = 3 + 0 - 2 = 1$、 $\lVert \bm{a} \rVert = \sqrt{6}$。
+例: $\mathbfit{a} = (1, 2, -1)^\top$、 $\symbf{b} = (3, 0, 2)^\top$ なら、 $\bm{a}^\top \bm{b} = 3 + 0 - 2 = 1$、 $\lVert \bm{a} \rVert = \sqrt{6}$。
 
 内積は、3分野で次のように現れる。
 
