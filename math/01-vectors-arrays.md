@@ -39,7 +39,7 @@ for i in range(n):      # Python の添字は 0 から始まる
 
 数を縦に並べたものを**ベクトル**という。この教材ではベクトルは縦(列ベクトル)で考える。
 
-$$
+```math
 \boldsymbol{a} =
 \begin{pmatrix}
   a_1 \\
@@ -47,7 +47,7 @@ $$
   a_3
 \end{pmatrix}, \qquad
 \boldsymbol^\top = (a_1, a_2, a_3)
-$$
+```
 
 $\boldsymbol^\top$ は縦を横にした**転置**である。ベクトルはロボティクスや機械学習の分野では太字のイタリック体(bold italic)で表されることが多い。本教材もそのルールに従う。
 
