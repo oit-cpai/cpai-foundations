@@ -40,7 +40,7 @@ for i in range(n):      # Python の添字は 0 から始まる
 数を縦に並べたものを**ベクトル**という。この教材ではベクトルは縦(列ベクトル)で考える。
 
 ```math
-\boldsymbol{a} =
+\mathbf{a} =
 \begin{pmatrix}
   a_1 \\
   a_2 \\
