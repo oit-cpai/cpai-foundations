@@ -99,16 +99,16 @@ V^{\pi}(s) = \sum_{a} \pi(a \mid s)\, Q^{\pi}(s, a)
 
 ### 連立一次方程式として解く
 
-式 (3) は、未知数 $V^{\pi}(s)$ が両辺に出てくる、**状態の数だけの連立一次方程式**である。方策で平均した遷移行列 $P_{\pi}$ と報酬 $\bm{r}_{\pi}$ を
+式 (3) は、未知数 $V^{\pi}(s)$ が両辺に出てくる、**状態の数だけの連立一次方程式**である。方策で平均した遷移行列 $P_{\pi}$ と報酬 $r_{\pi}$ を
 
 ```math
 P_{\pi}(s, s') = \sum_{a} \pi(a \mid s)\, P(s' \mid s, a), \qquad r_{\pi}(s) = \sum_{a} \pi(a \mid s)\, R(s, a)
 ```
 
-とおくと、式 (3) は $`\bm{v} = \bm{r}_{\pi} + \gamma P_{\pi} \bm{v}`$ 、つまり
+とおくと、式 (3) は $`v = r_{\pi} + \gamma P_{\pi} v`$ 、つまり
 
 ```math
-(I - \gamma P_{\pi})\, \bm{v} = \bm{r}_{\pi} \qquad (4)
+(I - \gamma P_{\pi})\, v = r_{\pi} \qquad (4)
 ```
 
 となる。M4 §4 の式と同じ形なので、`np.linalg.solve` で解ける。
