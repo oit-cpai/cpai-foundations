@@ -67,7 +67,7 @@
 
 ## 2. 単元の一覧
 
-状態:**✓** = このリポジトリに用意済み(2026-11-19 時点:M1〜M4、M8、R2〜R5、S1、S2、K1、K2)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
+状態:**✓** = このリポジトリに用意済み(2026-11-21 時点:M1〜M4、M8、R1〜R5、R7、R9、R10、S1、S2、S4、S5、K1、K2、K4、K7、U1、U2、D1)、**既存** = 既存の教材の該当する節を読む、**予定** = これから作る
 
 > [!NOTE]
 > 「既存」の教材のうち、Markdown の本文は研究室の [research-handbook](https://github.com/oit-cpai/research-handbook)(研究室のメンバー向け)、notebook は [lab-core](https://github.com/oit-cpai/lab-core)(公開)にある。
@@ -92,14 +92,16 @@
 
 | # | 単元 | 前提 | 教材 | 状態 |
 |---|---|---|---|---|
-| R1 | 探索と活用(バンディット) | M2 | [`reinforcement-learning/bandit.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/bandit.md)、notebook [`bandit_lecture`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/bandit_lecture.ipynb) | 既存 |
+| R1 | 探索と活用(バンディット) | M2 | [rl/01-bandit.md](rl/01-bandit.md)(標本平均の逐次更新と更新式 $Q \leftarrow Q + \alpha(r - Q)$、ε-greedy と同点の扱い、楽観的な初期値、UCB、複数回の実行の平均での比べ方、`cpai_lab` の `GaussianBandit`) | ✓ |
 | R2 | 環境を作る(`reset()`・`step()`) | M1、M2 | [rl/02-environment-step.md](rl/02-environment-step.md)(相互作用のループ、`terminated` と `truncated`、滑る床、複数の seed での比較、`cpai_lab` の `GridMazeEnv`) | ✓ |
 | R3 | MDPとベルマン方程式 | M2、M4 §4、R2 | [rl/03-mdp-bellman.md](rl/03-mdp-bellman.md)(MDP の5つの要素、収益と割引率、価値、ベルマン方程式を連立方程式で解く、最適な価値) | ✓ |
 | R4 | 動的計画法(方策評価・方策反復・価値反復) | R3、M1 | [rl/04-dynamic-programming.md](rl/04-dynamic-programming.md)(反復方策評価と収束の速さ、方策改善、方策反復、価値反復、`cpai_lab` の `value_iteration`) | ✓ |
 | R5 | 経験からモデルを推定する | M2 §5、M4 §4、R4 | [rl/05-model-estimation.md](rl/05-model-estimation.md)(数え上げで $\hat P$・ $\hat R$ を推定し、価値反復で計画して、本当のモデルで評価する) | ✓ |
 | R6 | モンテカルロ法 | R4 | [`reinforcement-learning/monte-carlo.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/monte-carlo.md) §1〜4 | 既存 |
-| R7 | TD学習・Sarsa・Q学習 | R6 | [`reinforcement-learning/td-learning.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/td-learning.md)、`cliff-walking.md`、notebook [`cliff_walking_lecture`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/cliff_walking_lecture.ipynb) | 既存 |
+| R7 | TD学習・Sarsa・Q学習 | R1、R3、R4 | [rl/07-td-learning.md](rl/07-td-learning.md)(TD誤差、3つの手法の TD目標、Q学習の更新式を「ベルマン最適方程式を経験の平均で解く」と読む、on-policy と off-policy、Cliff Walking、価値反復の $Q^\ast$ との比較、`cpai_lab` の `train_td`) | ✓ |
 | R8 | Dyna-Q(発展) | R5、R7 | [`reinforcement-learning/model-based.md`](https://github.com/oit-cpai/research-handbook/blob/main/reinforcement-learning/model-based.md) §1〜2 | 既存 |
+| R9 | 方策勾配法:REINFORCE(発展) | R3、S5、M3 | [rl/09-policy-gradient.md](rl/09-policy-gradient.md)(ソフトマックス方策、方策勾配の導出と推定の確かめ、REINFORCE、ベースラインでばらつきが減ることの確認、actor-critic・PPO への道。CartPole は NumPy で実装) | ✓ |
+| R10 | DQN(発展) | R7、D1、R9 | [rl/10-dqn.md](rl/10-dqn.md)(Q学習の表をニューラルネットに置き換える、TD目標への回帰、replay buffer と target network を取り除く実験。NumPy で実装) | ✓ |
 
 > [!TIP]
 > R4 で求めた最適価値を「正解」として、R5〜R8 の結果を確かめる。比べるときは、**環境から得たサンプル数をそろえる**。
@@ -111,8 +113,8 @@
 | S1 | 1変数の線形回帰 | M1、M2、M3 | [supervised/01-linear-regression-1d.md](supervised/01-linear-regression-1d.md)(入力・正解・予測・残差・損失、推定のばらつき、学習用と評価用の分割) | ✓ |
 | S2 | 複数入力の線形回帰と最小二乗法 | S1、M1、M4 | [supervised/02-multiple-linear-regression.md](supervised/02-multiple-linear-regression.md)(データ行列、正規方程式、重みの意味、決定係数、単位と標準化、似た入力、入力の増やしすぎ) | ✓ |
 | S3 | 勾配法 | M3 | M3 の §5、新しく作る(同じ損失を最小二乗と勾配法で解く) | 予定 |
-| S4 | 多項式回帰・リッジ回帰と過学習 | S2 | [`machine-learning/ml-basics.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/ml-basics.md)、`linear-regression.md` §4、notebook [`polynomial_regression`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/polynomial_regression.ipynb) | 既存 |
-| S5 | ロジスティック回帰と分類 | S3、M2 | [`machine-learning/classification.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/classification.md)(ロジスティック回帰の節)、notebook [`logistic_regression`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/logistic_regression.ipynb) | 既存 |
+| S4 | 多項式回帰・リッジ回帰と過学習 | S2 | [supervised/04-polynomial-ridge.md](supervised/04-polynomial-ridge.md)(基底関数と計画行列、次数と過学習、条件数、リッジ回帰、交差検証でのハイパーパラメータの選び方、バイアスとバリアンス) | ✓ |
+| S5 | ロジスティック回帰と分類 | S4、M2、M3 | [supervised/05-logistic-regression.md](supervised/05-logistic-regression.md)(確率を出すモデル、最尤推定と交差エントロピー、勾配 $\Phi^\top(y - t)$ と勾配法、しきい値と見逃し・誤警報、完全に分けられるデータと正則化、ソフトマックス) | ✓ |
 | S6 | 評価:データの分け方と指標 | S4 | [`machine-learning/model-evaluation.md`](https://github.com/oit-cpai/research-handbook/blob/main/machine-learning/model-evaluation.md) §1・§5・§6 | 既存 |
 
 > [!IMPORTANT]
@@ -125,12 +127,23 @@
 | K1 | 2リンク平面アームの順運動学 | M1(三角関数、内積、回転行列) | [kinematics/01-forward-kinematics.md](kinematics/01-forward-kinematics.md)(肘と手先の位置、相対角、到達可能領域、関節の可動範囲) | ✓ |
 | K2 | 解析的な逆運動学 | K1 | [kinematics/02-inverse-kinematics.md](kinematics/02-inverse-kinematics.md)(余弦定理と `atan2`、2つの解・1つの解・解なし、境界での丸めの誤差、角度の跳び) | ✓ |
 | K3 | 座標変換(回転行列・同次変換) | M1 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §2〜3 | 既存 |
-| K4 | 平面アームの数値逆運動学 | M3、K1 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §7〜8、notebook [`arm_kinematics`](https://github.com/oit-cpai/lab-core/blob/main/examples/notebooks/arm_kinematics.ipynb) 課題3・応用 | 既存 |
+| K4 | ヤコビ行列と数値逆運動学 | M3、M4、K1、K2 | [kinematics/04-numerical-ik.md](kinematics/04-numerical-ik.md)(ヤコビ行列と数値微分での確かめ、特異姿勢、一次近似のくり返し(ニュートン法)、疑似逆行列と減衰最小二乗法、円の軌道の追従) | ✓ |
 | K5 | 空間アーム(4〜6自由度)の順運動学 | K3 | [`robotics/kinematics.md`](https://github.com/oit-cpai/research-handbook/blob/main/robotics/kinematics.md) §4(DH記法)、notebook は新しく作る | 予定 |
 | K6 | 空間アームの数値逆運動学(発展) | K4、K5 | 新しく作る(位置・姿勢の誤差、疑似逆行列、減衰、特異姿勢) | 予定 |
+| K7 | 差動二輪ロボットの運動学と経路追従 | M1、M3、K1 | [kinematics/07-differential-drive.md](kinematics/07-differential-drive.md)(車輪の速さと並進速度・角速度、オイラー法、デッドレコニングの誤差、pure pursuit と前方注視距離) | ✓ |
 
 > [!WARNING]
 > 最初に次の3つを区別しておく:**関節の自由度**(関節変数の数)、**手先の自由度**(位置3+姿勢3 = 最大6)、**座標変換の行列の大きさ**(3次元の同次変換は 4×4。「4」は自由度の数ではない)。
+
+### 2.5 発展:教師なし学習とニューラルネット
+
+研究のテーマに応じて学ぶ。D1 は R10(DQN)の前提である。
+
+| # | 単元 | 前提 | 教材 | 状態 |
+|---|---|---|---|---|
+| U1 | クラスタリング:k-means と混合ガウス分布(EM アルゴリズム) | M2、S5 | [unsupervised/01-kmeans-gmm.md](unsupervised/01-kmeans-gmm.md)(割り当てと中心の更新、負担率、対数尤度が単調に増えることの確認、細長いクラスタ、クラスタの数の選び方、確率密度の小さい点) | ✓ |
+| U2 | 主成分分析(PCA) | M8、S2 | [unsupervised/02-pca.md](unsupervised/02-pca.md)(分散が最大の方向と固有ベクトル、寄与率、再構成の誤差 = 捨てた固有値の和、SVD との関係、標準化) | ✓ |
+| D1 | 多層パーセプトロンと誤差逆伝播 | S5、M1、M3 | [neural/01-mlp-backprop.md](neural/01-mlp-backprop.md)(順伝播、連鎖律による逆伝播の導出と数値微分での確かめ、学習された基底関数、隠れ層の幅) | ✓ |
 
 ## 3. 学ぶ順番(3年生の早期配属)
 
@@ -190,10 +203,20 @@
 | ベルマン方程式、方策評価、方策反復、価値反復 | R3、R4 |
 | 決定係数、標準化、多重共線性 | S2 |
 | Q学習、ε-greedy | R7、R1 |
+| バンディット、探索と活用、UCB | R1 |
+| TD誤差、Sarsa、on-policy・off-policy | R7 |
+| 方策勾配、REINFORCE、ベースライン | R9 |
+| DQN、replay buffer、target network | R10 |
+| 基底関数、リッジ回帰、交差検証 | S4 |
+| ロジスティック回帰、交差エントロピー、ソフトマックス | S5、R9 |
+| k-means、混合ガウス分布、EM アルゴリズム | U1 |
+| 主成分分析、寄与率 | U2 |
+| ニューラルネット、誤差逆伝播 | D1、R10 |
+| 差動二輪ロボット、デッドレコニング、pure pursuit | K7 |
 | 順運動学、到達可能領域、関節の可動範囲 | K1 |
 | 逆運動学、`atan2`、解が複数あること | K2、K4 |
 | 回転行列、同次変換 | M1、K1、K3、K5 |
-| 特異姿勢、疑似逆行列 | K4、K6、M8 |
+| 特異姿勢、疑似逆行列、減衰最小二乗法 | K4、K6、M8 |
 
 ## 6. 大学院進学を考えている人へ(発展課題)
 
@@ -265,8 +288,11 @@ cpai-foundations/
 ├── diagnostic.md           # 診断課題
 ├── diagnostic-answers.md   # 診断課題の解答と、次に進む単元
 ├── math/                   # 共通基礎(数学)の単元:本文(.md)と演習の notebook(.ipynb)
-├── rl/                     # 強化学習の単元(既存の教材にない部分)
-├── supervised/             # 教師あり学習の単元(既存の教材にない部分)
+├── rl/                     # 強化学習の単元
+├── supervised/             # 教師あり学習の単元
+├── kinematics/             # ロボットの運動学の単元
+├── unsupervised/           # 教師なし学習の単元(発展)
+├── neural/                 # ニューラルネットの単元(発展)
 └── solutions/              # notebook の解答つきの版
 ```
 
