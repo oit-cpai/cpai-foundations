@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="289" viewBox="0 0 640 289" xml:lang="ja" role="img" aria-labelledby="title desc">
+  <title id="title">ヤコビ行列で近似する手先の動き</title>
+  <desc id="desc">2リンクアームの根元の関節角を固定して、ひじの関節角 q₂ を少し増やす。拡大図では、同じ現在の手先位置 f(q) から、実際の手先は円弧をたどる。一次近似 J(q)Δq は円弧の接線方向の矢印で表す。</desc>
+  <style>
+    text { font: 17px "Noto Sans JP", Meiryo, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #19263A; }
+    .heading { font-size: 19px; font-weight: 700; }
+    .math { font-family: "Cambria Math", "STIX Two Math", "DejaVu Sans", serif; }
+    .blue { fill: #22549B; }
+    .orange { fill: #AB4815; }
+  </style>
+  <rect width="640" height="289" fill="#FFFFFF"/>
+  <defs>
+    <marker id="turn-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#19263A"/>
+    </marker>
+    <marker id="tangent-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#AB4815"/>
+    </marker>
+  </defs>
+  <text x="38" y="36" class="heading">2リンクアーム</text>
+  <text x="312" y="36" class="heading">手先付近を拡大</text>
+  <line x1="286" y1="27" x2="286" y2="261" stroke="#E1E8F0" stroke-width="1.2"/>
+  <line x1="42" y1="255" x2="74" y2="255" stroke="#6B7F96" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="58" y1="244" x2="137" y2="182" stroke="#19263A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="137" y1="182" x2="244" y2="182" stroke="#19263A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="137" y1="182" x2="232.88" y2="134.5" stroke="#22549B" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M 244 182 A 107 107 0 0 0 232.88 134.5" fill="none" stroke="#22549B" stroke-width="2.5"/>
+  <circle cx="58" cy="244" r="5.8" fill="white" stroke="#19263A" stroke-width="2.2"/>
+  <circle cx="137" cy="182" r="5.8" fill="white" stroke="#19263A" stroke-width="2.2"/>
+  <circle cx="244" cy="182" r="4" fill="#19263A"/>
+  <circle cx="232.88" cy="134.5" r="4.4" fill="#22549B"/>
+  <path d="M 182 182 A 45 45 0 0 0 177.32 162.02" fill="none" stroke="#19263A" stroke-width="1.6" marker-end="url(#turn-arrow)"/>
+  <line x1="158" y1="147" x2="176" y2="164" stroke="#6B7F96" stroke-width="1.2"/>
+  <text x="127" y="143" class="math heading">Δq₂</text>
+  <path d="M 473 247 A 310 310 0 0 0 440.78 109.38" fill="none" stroke="#22549B" stroke-width="3.1" stroke-linecap="round"/>
+  <line x1="473" y1="247" x2="473" y2="104.4" stroke="#AB4815" stroke-width="2.8" stroke-dasharray="8 6" marker-end="url(#tangent-arrow)"/>
+  <circle cx="440.78" cy="109.38" r="4.6" fill="#22549B"/>
+  <circle cx="473" cy="247" r="4.8" fill="#19263A"/>
+  <line x1="395" y1="98" x2="433.78" y2="108.38" stroke="#6B7F96" stroke-width="1.25"/>
+  <text x="312" y="93" class="blue">実際の手先</text>
+  <line x1="479" y1="104.4" x2="497" y2="104.4" stroke="#6B7F96" stroke-width="1.25"/>
+  <text x="504" y="91" class="orange">一次近似</text>
+  <text x="504" y="114" class="math orange">J(q) Δq</text>
+  <text x="490" y="253" class="math">f(q)</text>
+</svg>

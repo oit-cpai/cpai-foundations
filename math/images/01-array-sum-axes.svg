@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="296" viewBox="0 0 640 296" xml:lang="ja" role="img" aria-labelledby="title desc">
+  <title id="title">配列を足す方向と結果の形</title>
+  <desc id="desc">2行3列の配列 X。上から下に axis=0 で足すと、列ごとの和は 5、7、9 で形は (3,)。左から右に axis=1 で足すと、行ごとの和は 6、15 で形は (2,)。</desc>
+  <style>
+    text { font: 17px "Noto Sans JP", Meiryo, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #19263A; }
+    .center { text-anchor: middle; }
+    .end { text-anchor: end; }
+    .heading { font-size: 19px; font-weight: 700; }
+    .value { font-size: 24px; font-weight: 600; }
+    .code { font-family: Consolas, "SFMono-Regular", "Liberation Mono", monospace; font-size: 16px; }
+    .muted { fill: #465870; }
+    .blue { fill: #22549B; }
+    .orange { fill: #AB4815; }
+  </style>
+  <rect width="640" height="296" fill="#FFFFFF"/>
+  <defs>
+    <marker id="down-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#22549B"/>
+    </marker>
+    <marker id="right-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#AB4815"/>
+    </marker>
+  </defs>
+  <rect x="104" y="64" width="216" height="100" fill="#F6F8FB" stroke="#C7D3E1" stroke-width="1.2"/>
+  <line x1="104" y1="114" x2="320" y2="114" stroke="#C7D3E1" stroke-width="1.2"/>
+  <line x1="176" y1="64" x2="176" y2="164" stroke="#C7D3E1" stroke-width="1.2"/>
+  <line x1="248" y1="64" x2="248" y2="164" stroke="#C7D3E1" stroke-width="1.2"/>
+  <rect x="488" y="64" width="72" height="100" fill="#FFF1E5" stroke="#D7AC90" stroke-width="1.2"/>
+  <line x1="488" y1="114" x2="560" y2="114" stroke="#D7AC90" stroke-width="1.2"/>
+  <rect x="104" y="228" width="216" height="48" fill="#EAF2FD" stroke="#ABC1DE" stroke-width="1.2"/>
+  <line x1="176" y1="228" x2="176" y2="276" stroke="#ABC1DE" stroke-width="1.2"/>
+  <line x1="248" y1="228" x2="248" y2="276" stroke="#ABC1DE" stroke-width="1.2"/>
+  <line x1="140" y1="177" x2="140" y2="215" stroke="#22549B" stroke-width="2.3" marker-end="url(#down-arrow)"/>
+  <line x1="212" y1="177" x2="212" y2="215" stroke="#22549B" stroke-width="2.3" marker-end="url(#down-arrow)"/>
+  <line x1="284" y1="177" x2="284" y2="215" stroke="#22549B" stroke-width="2.3" marker-end="url(#down-arrow)"/>
+  <line x1="338" y1="89" x2="473" y2="89" stroke="#AB4815" stroke-width="2.3" stroke-dasharray="7 5" marker-end="url(#right-arrow)"/>
+  <line x1="338" y1="139" x2="473" y2="139" stroke="#AB4815" stroke-width="2.3" stroke-dasharray="7 5" marker-end="url(#right-arrow)"/>
+  <text x="140" y="97" class="value center">1</text>
+  <text x="212" y="97" class="value center">2</text>
+  <text x="284" y="97" class="value center">3</text>
+  <text x="140" y="147" class="value center">4</text>
+  <text x="212" y="147" class="value center">5</text>
+  <text x="284" y="147" class="value center">6</text>
+  <text x="140" y="260" class="value center">5</text>
+  <text x="212" y="260" class="value center">7</text>
+  <text x="284" y="260" class="value center">9</text>
+  <text x="524" y="97" class="value center">6</text>
+  <text x="524" y="147" class="value center">15</text>
+  <text x="104" y="45" class="heading">X</text>
+  <text x="129" y="45" class="code muted">(2, 3)</text>
+  <text x="87" y="201" class="code blue end">axis=0</text>
+  <text x="401" y="54" class="code orange center">axis=1</text>
+  <text x="524" y="28" class="heading center">行ごとの和</text>
+  <text x="524" y="50" class="code muted center">(2,)</text>
+  <text x="343" y="249" class="heading">列ごとの和</text>
+  <text x="343" y="271" class="code muted">(3,)</text>
+</svg>
