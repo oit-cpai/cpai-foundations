@@ -76,7 +76,7 @@
 
 | # | 単元 | 主な内容 | 教材 | 状態 |
 |---|---|---|---|---|
-| M1 | 数式・ベクトル・配列 | 添字・総和・最大値、ベクトル・内積・ノルム、行列積とサイズ、配列の形と軸 | [math/01-vectors-arrays.md](math/01-vectors-arrays.md) | ✓ |
+| M1 | 数式・ベクトル・配列 | 添字・総和(平均と重み付きの和)、ベクトル・内積・ノルム、行列積とサイズ、配列の形と軸 | [math/01-vectors-arrays.md](math/01-vectors-arrays.md) | ✓ |
 | M2 | 確率・期待値・標本平均 | 確率変数、期待値と標本平均の違い、分散、条件付き確率、数え上げによる確率の推定、マルコフ連鎖の入口 | [math/02-probability-expectation.md](math/02-probability-expectation.md) | ✓ |
 | M3 | 微分・一次近似 | 微分と数値微分、偏微分・勾配、一次近似、ヤコビ行列、勾配法 | [math/03-derivative-linear-approx.md](math/03-derivative-linear-approx.md) | ✓ |
 | M4 | 連立一次方程式と最小二乗法 | 解の存在と一意性、ランクの直観、最小二乗法と正規方程式、`solve` と `lstsq`、マルコフ連鎖の価値 | [math/04-linear-systems-least-squares.md](math/04-linear-systems-least-squares.md) | ✓ |
